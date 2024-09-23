@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="ISO-8859-9">
+  
+  <!-- Load the AJAX API and data.json -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  
+  <script type="text/javascript">
+    
+    // empty reference
+    var jsonData = {};
+    
+    // db created by ABDT.exe program
+    var jsonData = {"DİK İŞLEM": {
+  "fayda": [
+    {"name": "RIDVAN ÇİL", "value": 78.8},
+    {"name": "AHMET AKKUŞ", "value": 60.2},
+    {"name": "MEVLÜT ÇEVİKER", "value": 60.1},
+    {"name": "ALİ GÜZEL", "value": 52.1},
+    {"name": "KAZIM SAVUR", "value": 34.3},
+  ],
+
+  "performance70": [
+    {"name": "KAZIM SAVUR", "value": 35.2},
+  ],
+
+  "performance": [
+    {"name": "RIDVAN ÇİL", "value": 100.0},
+    {"name": "AHMET AKKUŞ", "value": 100.0},
+    {"name": "ALİ GÜZEL", "value": 100.0},
+    {"name": "MEVLÜT ÇEVİKER", "value": 70.0},
+    {"name": "KAZIM SAVUR", "value": 35.2},
+  ],
+
+  "faydaPerf": [
+    {"metric": "Performans", "value": 81.0},
+    {"metric": "Fayda", "value": 57.1}
+  ],
+
+  "duruslar": [
+    {"name": "RIDVAN ÇİL", "kaliteKontrol": 0.0, "olcuAyari": 0.0, "malzemeYoklugu": 0.0},
+    {"name": "AHMET AKKUŞ", "kaliteKontrol": 0.0, "olcuAyari": 0.0, "malzemeYoklugu": 0.0},
+    {"name": "MEVLÜT ÇEVİKER", "kaliteKontrol": 0.0, "olcuAyari": 0.0, "malzemeYoklugu": 0.0},
+    {"name": "ALİ GÜZEL", "kaliteKontrol": 0.0, "olcuAyari": 0.0, "malzemeYoklugu": 0.0},
+    {"name": "KAZIM SAVUR", "kaliteKontrol": 0.0, "olcuAyari": 0.0, "malzemeYoklugu": 0.0},
+  ],
+
+  "metrics": [
+    {"name": "Yönetici Görüşleri", "value": 0},
+    {"name": "Sisteme Şef Tanımı Yapma", "value": 2},
+    {"name": "Takım Sarfiyatı", "value": 0},
+    {"name": "Sisteme Hurdaların Girmesi", "value": -1},
+  ],
+
+  "date": "Cuma, 20 Eylül 2024",
+},
+
+"KAYAR": {
+  "metrics": [
+    {"name": "Yönetici Görüşleri", "value": 0},
+    {"name": "Sisteme Şef Tanımı Yapma", "value": 14},
+    {"name": "Takım Sarfiyatı", "value": 4},
+    {"name": "Sisteme Hurdaların Girmesi", "value": -1},
+  ],
+
+  "fayda": [
+    {"name": "EMRAH TOKLU", "value": 105.7},
+    {"name": "YASİN SARPKAYA", "value": 100.1},
+    {"name": "HURŞİT DURAN AĞMIŞ", "value": 73.9},
+    {"name": "MUHAMMED ALİ SOYLU", "value": 69.3},
+  ],
+
+  "performance70": [
+  ],
+
+  "performance": [
+    {"name": "MUHAMMED ALİ SOYLU", "value": 100.0},
+    {"name": "EMRAH TOKLU", "value": 77.5},
+    {"name": "YASİN SARPKAYA", "value": 76.0},
+    {"name": "HURŞİT DURAN AĞMIŞ", "value": 73.9},
+  ],
+
+  "faydaPerf": [
+    {"metric": "Performans", "value": 81.8},
+    {"metric": "Fayda", "value": 87.3}
+  ],
+
+  "duruslar": [
+    {"name": "EMRAH TOKLU", "kaliteKontrol": 0.0, "olcuAyari": 40.3, "malzemeYoklugu": 0.0},
+    {"name": "YASİN SARPKAYA", "kaliteKontrol": 0.0, "olcuAyari": 0.0, "malzemeYoklugu": 0.0},
+    {"name": "HURŞİT DURAN AĞMIŞ", "kaliteKontrol": 0.0, "olcuAyari": 53.7, "malzemeYoklugu": 0.0},
+    {"name": "MUHAMMED ALİ SOYLU", "kaliteKontrol": 0.0, "olcuAyari": 0.0, "malzemeYoklugu": 0.0},
+  ],
+
+  "date": "Cuma, 20 Eylül 2024",
+},
+
+"TORNA": {
+  "duruslar": [
+    {"name": "HALİL YİĞİT", "kaliteKontrol": 0.0, "olcuAyari": 0.0, "malzemeYoklugu": 0.0},
+    {"name": "HASANİ BASRİ TANIŞ", "kaliteKontrol": 0.0, "olcuAyari": 0.0, "malzemeYoklugu": 59.0},
+  ],
+
+  "metrics": [
+    {"name": "Yönetici Görüşleri", "value": 0},
+    {"name": "Sisteme Şef Tanımı Yapma", "value": 5},
+    {"name": "Takım Sarfiyatı", "value": 0},
+    {"name": "Sisteme Hurdaların Girmesi", "value": -1},
+  ],
+
+  "fayda": [
+    {"name": "HALİL YİĞİT", "value": 22.9},
+    {"name": "HASANİ BASRİ TANIŞ", "value": 13.2},
+  ],
+
+  "performance70": [
+    {"name": "HASANİ BASRİ TANIŞ", "value": 51.9},
+  ],
+
+  "performance": [
+    {"name": "HALİL YİĞİT", "value": 80.4},
+    {"name": "HASANİ BASRİ TANIŞ", "value": 51.9},
+  ],
+
+  "faydaPerf": [
+    {"metric": "Performans", "value": 66.2},
+    {"metric": "Fayda", "value": 18.0}
+  ],
+
+  "date": "Cuma, 20 Eylül 2024",
+},
+
+"YATAY": {
+  "metrics": [
+    {"name": "Yönetici Görüşleri", "value": 0},
+    {"name": "Sisteme Şef Tanımı Yapma", "value": 2},
+    {"name": "Takım Sarfiyatı", "value": 4},
+    {"name": "Sisteme Hurdaların Girmesi", "value": -1},
+  ],
+
+  "fayda": [
+    {"name": "İBRAHİM KÖYMEN", "value": 84.8},
+    {"name": "MUSTAFA DEMİR", "value": 78.7},
+    {"name": "ERSİN ÇEREZ", "value": 74.8},
+    {"name": "KENAN USLU", "value": 73.9},
+    {"name": "YILMAZ ÇOLAK", "value": 72.1},
+    {"name": "MEHMET TÜRKOĞLU", "value": 71.7},
+    {"name": "FURKAN ÇOBAN", "value": 51.0},
+    {"name": "EMRE BARIŞ ÜNBAŞ", "value": 49.0},
+    {"name": "HASAN KARA", "value": 43.6},
+    {"name": "HÜSEYİN AKKOCA", "value": 33.7},
+    {"name": "BURAK MUTU", "value": 16.8},
+    {"name": "YÜKSEL KELİK", "value": 14.9},
+  ],
+
+  "performance70": [
+    {"name": "FURKAN ÇOBAN", "value": 54.3},
+    {"name": "HASAN KARA", "value": 51.9},
+    {"name": "HÜSEYİN AKKOCA", "value": 63.6},
+    {"name": "BURAK MUTU", "value": 36.3},
+    {"name": "YÜKSEL KELİK", "value": 31.0},
+  ],
+
+  "performance": [
+    {"name": "ERSİN ÇEREZ", "value": 100.0},
+    {"name": "EMRE BARIŞ ÜNBAŞ", "value": 100.0},
+    {"name": "İBRAHİM KÖYMEN", "value": 85.5},
+    {"name": "MUSTAFA DEMİR", "value": 80.2},
+    {"name": "KENAN USLU", "value": 79.6},
+    {"name": "MEHMET TÜRKOĞLU", "value": 76.0},
+    {"name": "YILMAZ ÇOLAK", "value": 75.0},
+    {"name": "HÜSEYİN AKKOCA", "value": 63.6},
+    {"name": "FURKAN ÇOBAN", "value": 54.3},
+    {"name": "HASAN KARA", "value": 51.9},
+    {"name": "BURAK MUTU", "value": 36.3},
+    {"name": "YÜKSEL KELİK", "value": 31.0},
+  ],
+
+  "faydaPerf": [
+    {"metric": "Performans", "value": 69.4},
+    {"metric": "Fayda", "value": 55.4}
+  ],
+
+  "duruslar": [
+    {"name": "İBRAHİM KÖYMEN", "kaliteKontrol": 0.0, "olcuAyari": 0.0, "malzemeYoklugu": 0.0},
+    {"name": "MUSTAFA DEMİR", "kaliteKontrol": 0.0, "olcuAyari": 0.0, "malzemeYoklugu": 0.0},
+    {"name": "ERSİN ÇEREZ", "kaliteKontrol": 0.0, "olcuAyari": 0.0, "malzemeYoklugu": 0.0},
+    {"name": "KENAN USLU", "kaliteKontrol": 0.0, "olcuAyari": 0.0, "malzemeYoklugu": 0.0},
+    {"name": "YILMAZ ÇOLAK", "kaliteKontrol": 9.0, "olcuAyari": 0.0, "malzemeYoklugu": 0.0},
+    {"name": "MEHMET TÜRKOĞLU", "kaliteKontrol": 9.0, "olcuAyari": 0.0, "malzemeYoklugu": 0.0},
+    {"name": "FURKAN ÇOBAN", "kaliteKontrol": 0.0, "olcuAyari": 0.0, "malzemeYoklugu": 0.0},
+    {"name": "EMRE BARIŞ ÜNBAŞ", "kaliteKontrol": 0.0, "olcuAyari": 0.0, "malzemeYoklugu": 0.0},
+    {"name": "HASAN KARA", "kaliteKontrol": 0.0, "olcuAyari": 0.0, "malzemeYoklugu": 0.0},
+    {"name": "HÜSEYİN AKKOCA", "kaliteKontrol": 0.0, "olcuAyari": 0.0, "malzemeYoklugu": 0.0},
+    {"name": "BURAK MUTU", "kaliteKontrol": 0.0, "olcuAyari": 0.0, "malzemeYoklugu": 0.0},
+    {"name": "YÜKSEL KELİK", "kaliteKontrol": 0.0, "olcuAyari": 0.0, "malzemeYoklugu": 0.0},
+  ],
+
+  "date": "Cuma, 20 Eylül 2024",
+},
+
+};
+
+  </script>
+  
+  <script type="text/javascript">
+    // Load the Visualization API and the corechart package
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(initCharts);
+
+var currentSet = 'YATAY';
+    
+    const chartIDs = [
+        'performance_chart',
+        'fayda_chart',
+        'stacked_bar_chart',
+        'performance_fayda_bars',
+      ];
+
+    function initCharts() {
+      try {
+        // Load the data and draw the charts
+        drawCharts();
+      } catch (error) {
+        // If an error occurs, call updateDate with an empty string
+        console.error("Error loading data.json:", error);
+        updateDate("");
+      }
+    }
+
+    function updateDate(date) {
+      const dateElement = document.getElementById('dateID');
+
+      if (date === "" || date === undefined) {
+        dateElement.innerText = "ERROR, data.json not found!";
+        dateElement.style.color = "red";
+      } else {
+        dateElement.innerText = date;
+        dateElement.style.color = "#333"; // Reset to default color
+      }
+    }
+    
+    function resetGraphics() {
+      // Logic to clear or reset the charts
+      chartIDs.forEach(id => {
+        const container = document.getElementById(id);
+        container.innerHTML = '</br><p style="color: red; text-align: center; font-weight: bold;">...veri boş!</p>';
+      });
+      
+      populateMetricsTable([]);
+    }
+
+    function drawCharts() {
+      const dataSet = jsonData[currentSet];
+      
+      if (!dataSet || ((dataSet.performance.length === 0) && dataSet.performance70.length === 0)) {
+        resetGraphics();
+      } else {
+        drawPerformanceChart(dataSet.performance);
+        drawFaydaChart(dataSet.fayda);
+        drawStackedBarChart(dataSet);
+        updateDate(dataSet.date);
+        drawFaydaPerfChart(dataSet.faydaPerf);
+        populateMetricsTable(dataSet.metrics);
+      };
+    }
+
+    function drawPerformanceChart(performanceData) {
+      // Convert the performance data into a format usable by Google Charts
+      var chartDataArray = [['Operator Adı', 'Performans (%)', { role: 'style' }]];  // Add headers and a style role
+      performanceData.forEach(function(item) {
+        var isBelowThreshold = item.value < 70; // Check if the value is below the threshold
+        var color = isBelowThreshold ? '#FF6347' : '#0096FF'; // Red for values < 50, blue otherwise
+        chartDataArray.push([item.name, item.value, color]); // Add color as the third column
+      });
+    
+      // Convert the array into a DataTable for Google Charts
+      var data = google.visualization.arrayToDataTable(chartDataArray);
+    
+      // Set chart options
+      var options = {
+        title: 'Operatör Performans Yüzdeleri',
+        width: 600,
+        height: 400,
+        chartArea: {width: '40%'},
+        hAxis: {
+          title: 'Performans (%)',
+          minValue: 0
+        },
+        vAxis: {
+          title: 'Operatör ADI SOYADI',
+          titleTextStyle: {
+            bold: true,    // Make the title bold
+            italic: false,  // Make the title italic
+          },
+          textStyle: {
+            fontSize: 9 // Adjust the font size as needed
+          },
+        },
+        legend: { position: 'none' }, // Disable the legend
+      };
+    
+      // Create a new Bar chart and draw it inside the div with ID 'performance_chart'
+      var chart = new google.visualization.BarChart(document.getElementById('performance_chart'));
+      chart.draw(data, options);
+    }
+
+    function drawFaydaChart(faydaData) {
+      // Convert the fayda data into a format usable by Google Charts
+      var chartDataArray = [['ADI SOYADI', 'FAYDA (%)']];  // Add headers
+      faydaData.forEach(function(item) {
+        chartDataArray.push([item.name, item.value]);
+      });
+    
+      // Convert the array into a DataTable for Google Charts
+      var data = google.visualization.arrayToDataTable(chartDataArray);
+    
+      // Set chart options
+      var options = {
+        title: 'Fayda Oranlar ',
+        width: 600,
+        height: 400,
+        chartArea: {width: '40%'},
+        hAxis: {
+          title: 'Fayda (%)',
+          minValue: 0
+        },
+        vAxis: {
+          title: 'Operatör ADI SOYADI',
+          titleTextStyle: {
+            bold: true,    // Make the title bold
+            italic: false,  // Make the title italic
+          },
+          textStyle: {
+            fontSize: 9 // Adjust the font size as needed
+          },
+        },
+        series: {
+          0: { color: '#006400' } // Dark green color
+        },
+        legend: { position: 'none' }, // Disable the legend
+      };
+    
+      // Create a new Bar chart and draw it inside the div with ID 'fayda_chart'
+      var chart = new google.visualization.BarChart(document.getElementById('fayda_chart'));
+      chart.draw(data, options);
+    }
+
+    function drawStackedBarChart(dataSet) {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'ADI SOYADI');
+      data.addColumn('number', 'Kalite Kontrol');
+      data.addColumn('number', 'Ölçü Ayarı');
+      data.addColumn('number', 'Malzeme Yokluğu');
+    
+      // Filter out rows where all columns have values of 1 or less
+      var filteredDuruslar = dataSet.duruslar.filter(item => 
+        item.kaliteKontrol > 1 || 
+        item.olcuAyari > 1 || 
+        item.malzemeYoklugu > 1
+      );
+    
+      // Add filtered data to the DataTable
+      filteredDuruslar.forEach(item => {
+        data.addRow([item.name, item.kaliteKontrol || 0, item.olcuAyari || 0, item.malzemeYoklugu || 0]);
+      });
+    
+      var options = {
+        'title': 'CNC Makina Zaman Kayıpları',
+        'width': 900,
+        'height': 500,
+        'isStacked': true,
+        'legend': {
+          'position': 'top', 
+          'textStyle': {'fontSize': 12},
+        },
+        'hAxis': {
+          'title': 'Zaman Aşaması',
+          'titleTextStyle': {
+            'fontSize': 12,  // Font size of the title
+            'bold': true,    // Make the title bold
+            'italic': false  // Make the title italic
+          },
+          'titleOffset': 10,  // Adjust distance of title from the axis
+          'minValue': 0,
+          'slantedText': true,
+          'slantedTextAngle': 45,
+          'textPosition': 'out',
+          'textStyle': {'fontSize': 10} // Font size of the axis labels
+        },
+        'vAxis': {
+          'title': 'Operatörler',
+          'viewWindowMode': 'maximized',
+          'gridlines': { count: 10 },
+          'ticks': [0, 50, 100, 150, 200], // Adjust this based on your maximum values
+          'textStyle': {'fontSize': 9},
+          'titleTextStyle': {
+            'font': 'Consolas',
+            'fontSize': 14,  // Font size of the title
+            'bold': true,    // Make the title bold
+            'italic': false  // Make the title italic
+          },
+        },
+        'bar': { 'groupWidth': '50%' },
+        'chartArea': {
+          'left': '20%',
+          'top': '20%',
+          'bottom': '25%',
+          'width': '90%',
+          'height': '10%'
+        },
+        'colors': [
+          '#66c2a5', // Light green
+          '#1f77b4', // Light blue
+          '#ff7f0e', // Light orange
+          '#d62728'  // Light red
+        ],
+      };
+    
+      var chart = new google.visualization.BarChart(document.getElementById('stacked_bar_chart'));
+      chart.draw(data, options);
+    }
+
+    function drawFaydaPerfChart(faydaPerfData) {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Metric');
+      data.addColumn('number', 'Value');
+      data.addColumn({ type: 'string', role: 'annotation' });
+      data.addColumn({ type: 'string', role: 'style' }); // Add style column
+    
+      faydaPerfData.forEach(item => {
+        // Ensure the metric name matches exactly and compare the value against 70%, color red if below
+        var color = (item.metric === 'Performans' && item.value < 70.0) ? '#D2042D' : '#1b9e77';
+        data.addRow([item.metric, item.value, item.value.toString(), color]); // Add color as a style
+      });
+    
+      var options = {
+        title: 'Bölüm Ortalamalar',
+        titleTextStyle: {
+          'fontSize': 16,
+          'bold': true,
+          'italic': true
+        },
+        vAxis: {
+          title: 'Yüzde (%)',
+          minValue: 0,
+          maxValue: 100,
+          textStyle: { fontSize: 12 },
+          titleTextStyle: {
+            'fontSize': 12,
+            'bold': true,
+            'italic': true
+          },
+        },
+        hAxis: { textStyle: { fontSize: 12 } },
+        chartArea: { width: '60%', height: '70%' },
+        seriesType: 'bars',
+        series: { 0: { type: 'bars' } },
+        colors: ['#1b9e77', '#d95f02'], // Default colors
+        legend: { position: 'none' },
+        annotations: {
+          alwaysOutside: true, // Display annotations inside the bars
+          textStyle: {
+            fontSize: 19,
+            color: '#000',
+            auraColor: 'none'
+          }
+        },
+        height: 300,
+        width: 300
+      };
+    
+      var chart = new google.visualization.ComboChart(document.getElementById('performance_fayda_bars'));
+      chart.draw(data, options);
+    }
+    
+    function updateCharts() {
+      // Get selected set from combobox
+      const select = document.getElementById('dataSetSelect');
+      currentSet = select.value;
+      drawCharts();
+    }
+  </script>
+  
+  <script>
+    // Function to populate the metrics table
+    function populateMetricsTable(metrics) {
+      var tableBody = document.querySelector('#metricsTable tbody');
+      tableBody.innerHTML = ''; // Clear any existing rows
+      
+      metrics.forEach(function(metric) {
+        var row = document.createElement('tr');
+        
+        var cellName = document.createElement('td');
+        cellName.textContent = metric.name;
+        // Make cellName clickable and show an alert on click
+        cellName.style.cursor = 'pointer';
+        cellName.addEventListener('click', function() {
+          alert('DİKKAT! veriler 5 günden fazla güncellenmemiş...');
+        });
+        
+        var cellValue = document.createElement('td');
+        cellValue.textContent = metric.value;
+        // Make cellValue clickable and show an alert on click
+        cellValue.style.cursor = 'pointer';
+        cellValue.addEventListener('click', function() {
+          alert('DİKKAT! veriler 5 günden fazla güncellenmemiş...');
+        });
+        
+        // Check if the value is "X" and color both name and value red
+        if (metric.value === -1) {
+          cellValue.textContent = "X"
+          cellName.style.color = 'red';
+          cellValue.style.color = 'red';
+        }
+        
+        row.appendChild(cellName);
+        row.appendChild(cellValue);
+        tableBody.appendChild(row);
+      });
+    }
+  </script>
+  
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    
+    #headerPage {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f0f0f0;
+        padding: 0px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #content {
+        padding-bottom: 80px; /* Adjust this value based on the height of your footer */
+    }
+    
+    #footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        background-color: #f1f1f1; /* Adjust background color as needed */
+        padding: 10px; /* Adjust padding as needed */
+        box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for better visibility */
+        z-index: 1000; /* Ensures the footer stays on top of other elements */
+        font-size: 10px; /* Adjust font size as needed */
+        color: #007BFF; /* Blue text color */
+        text-shadow: 2px 2px 4px rgba(0, 123, 255, 0.7); /* Deeper blue shadow for text */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #footer img {
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    #container {
+      width: 90%;
+      max-width: 1200px;
+      height: 90vh; /* Adjusted height for the container */
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      padding-top: 100px;
+      padding-bottom: 40px; /* Adjust this value based on the height of your footer */
+      box-sizing: border-box;
+      text-align: center;
+      overflow-y: auto; /* Allow scrolling if content overflows */
+      scrollbar-width: none; /* Hide scrollbars in Firefox */
+    }
+
+    /* Hide scrollbars in WebKit browsers (Chrome, Safari) */
+    #container::-webkit-scrollbar {
+        display: none; /* Hide scrollbars */
+    }
+    
+    #title {
+      font-family: 'Arial', sans-serif;
+      font-size: 28px;
+      font-weight: bold;
+      color: #333;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 0 0 25px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.2);
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    #dateID {
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      color: #333;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 0 0 25px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.2);
+      margin-bottom: 10px;
+    }
+    
+    #blueLine {
+      height: 1px; /* Adjust thickness as needed */
+      background-color: #3399ff; /* Lighter blue color */
+      width: 100%; /* Expands with the container */
+      margin-bottom: 20px; /* Adjust spacing below the line */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 1); /* 3D effect with shadow */
+    }    
+    
+    #combobox-container {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    
+    #dataSetSelect {
+        padding: 5px 10px; /* Reduce padding if needed */
+        font-size: 14px;
+        border: 2px solid #007bff;
+        border-radius: 4px;
+        background-color: #ffffff;
+        color: #333;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s, border-color 0.3s;
+        height: 35px;
+    }
+
+    #dataSetSelect:focus {
+      outline: none;
+      background-color: #e9ecef;
+      border-color: #0056b3;
+    }
+    
+    label {
+      font-family: 'Arial';
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      margin-right: 10px;
+    }
+    
+    #charts {
+      display: flex;
+      flex-wrap: wrap; /* Allow charts to wrap */
+      justify-content: center; /* Center the charts */
+      gap: 20px; /* Add some spacing between charts */
+      margin-top: 20px;
+    }
+    
+    #performance_chart, #fayda_chart, #stacked_bar_chart {
+      width: 500px;
+      height: 400px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow around the chart */
+    }
+
+    #performance_fayda_bars {
+      width: 300px;
+      height: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow around the chart */
+    } 
+    
+    #stats_tutanaklar {
+      width: 300px;
+      height: 300px;
+      border: 0px solid #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif; /* Set the font family */
+      font-size: 14px; /* Set the font size */
+      font-weight: normal; /* Set the font weight */
+      color: #333; /* Set the font color */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow to text */
+    }
+
+    #stats_tutanaklar table {
+      width: 80%;
+      height: 20%;
+      border-collapse: collapse;
+    }
+    
+    #stats_tutanaklar td {
+      border: 1px solid #000;
+    }
+    
+    /* Adjust the width of the columns */
+    #stats_tutanaklar td:first-child {
+      width: 90%; /* First column takes 60% of the width */
+      text-align: left;
+    }
+    
+    #stats_tutanaklar td:last-child {
+      width: 10%; /* Second column takes 40% of the width */
+      text-align: center;
+    }
+    
+    /* Adjust the height of the rows */
+    #stats_tutanaklar tr {
+      height: 20%; /* Each row takes 50% of the height */
+    }
+
+    #stacked_bar_chart {
+      width: 900px; /* Ensure it fits within the container */
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div id="headerPage">
+    <div id="title">Günlük Atölye Özeti</div>
+    <div id="combobox-container">
+      <label for="dataSetSelect"></label>
+      <select id="dataSetSelect" onchange="updateCharts()">
+        <option value='KAYAR'>KAYAR</option>
+        <option value='TORNA'>TORNA</option>
+        <option value='DİK İŞLEM'>DİK İŞLEM</option>
+<option value='YATAY' selected>YATAY</option>
+      </select>
+    </div>
+    <div id="dateID"></div>
+  </div>
+    
+  </br>
+  </br>
+  </br>
+    
+  <div id="container">
+    <div id="charts">
+      <!-- Div that will hold the Performance pie chart -->
+      <div id="performance_fayda_bars"></div>
+
+      <!-- Div that will hold the Performance pie chart -->
+      <div id="stats_tutanaklar">
+        <table id="metricsTable">
+          <thead>
+            <tr>
+              <th>Tutanak Cinsi</th>
+              <th>Miktar</th>
+            </tr>
+          </thead>
+          
+          <tr>
+            <td>Yönetici Görüşleri</td>
+            <td>0</td>
+          </tr>
+
+          <tr>
+            <td>Sisteme Şef Tanımı Yapma</td>
+            <td>0</td>
+          </tr>
+          
+          <tr>
+            <td>Takım Sarfiyatı</td>
+            <td>0</td>
+          </tr>
+
+          <tr>
+            <td>Sisteme Hurdların Girmesi</td>
+            <td>0</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Div that will hold the Performance pie chart -->
+      <div id="performance_chart"></div>
+      <!-- Div that will hold the Fayda pie chart -->
+      <div id="fayda_chart"></div>
+      <!-- Div that will hold the Stacked Bar Chart -->
+      <div id="stacked_bar_chart"></div>
+    </div>
+  </div>
+  
+  <div id="footer">
+    <p>Developed by Sedat Serper for Derya Arms Ltd. &copy; 2024</p>
+  </div>
+  
+  <div id="footer">
+    <img src="data:image/png;base64,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" alt="Logo">
+    <p>Developed by Sedat Serper for Derya Arms Ltd. &copy; 2024</p>
+  </div>  
+  
+</body>
+</html>
+
+
